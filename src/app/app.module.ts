@@ -51,7 +51,7 @@ import {OverlayModule} from '@angular/cdk/overlay';
 import { EscogerFavoritosComponent } from './escoger-favoritos/escoger-favoritos.component';
 import { MatCardModule } from '@angular/material/card';
 import {NgxPaginationModule} from 'ngx-pagination';
-
+import { HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -111,7 +111,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     OverlayModule,
     PortalModule,
     ScrollingModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

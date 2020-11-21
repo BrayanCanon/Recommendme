@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ServicesService } from '../services/services.service';
 import { ModeloGeneral } from './models/modeloGeneral.module';
 
 @Component({
@@ -200,31 +201,31 @@ export class EscogerFavoritosComponent implements OnInit, OnChanges  {
       titulo: "Yakimoshi no kotae",
       autor: "Honeyworks",
       link: "/r/rascal+flatts/payback_21083231.html",
-      imagen: "../../assets/movieIcon.jpg"
+      imagen: "../../assets/songIcon.jpg"
     },
     {
       titulo: "Ima suki ni naru",
       autor: "Honeyworks",
       link: "/r/rascal+flatts/payback_21083231.html",
-      imagen: "../../assets/movieIcon.jpg"
+      imagen: "../../assets/songIcon.jpg"
     },
     {
       titulo: "Tokyo Summer Session",
       autor: "Honeyworks",
       link: "/r/rascal+flatts/payback_21083231.html",
-      imagen: "../../assets/movieIcon.jpg"
+      imagen: "../../assets/songIcon.jpg"
     },
     {
       titulo: "The day when I know love",
       autor: "Honeyworks",
       link: "/r/rascal+flatts/payback_21083231.html",
-      imagen: "../../assets/movieIcon.jpg"
+      imagen: "../../assets/songIcon.jpg"
     },
     {
       titulo: "Kokuhaku Yokou Renshuu",
       autor: "Honeyworks",
       link: "/r/rascal+flatts/payback_21083231.htmlfdsagdfgfsfgdashdfhsfdhsfdga",
-      imagen: "../../assets/movieIcon.jpg"
+      imagen: "../../assets/songIcon.jpg"
     },
   ]
 
@@ -236,36 +237,36 @@ export class EscogerFavoritosComponent implements OnInit, OnChanges  {
       fechaPublicacion: "2003",
       genero: "sdsad",
       link: "/r/rascal+flatts/payback_21083231.html",
-      imagen: "../../assets/movieIcon.jpg"
+      imagen: "../../assets/bookIcon.jpg"
     },
     {
       titulo: "Ima suki ni naru",
       autor: "Honeyworks",
       link: "/r/rascal+flatts/payback_21083231.html",
-      imagen: "../../assets/movieIcon.jpg"
+      imagen: "../../assets/bookIcon.jpg"
     },
     {
       titulo: "Tokyo Summer Session",
       autor: "Honeyworks",
       link: "/r/rascal+flatts/payback_21083231.html",
-      imagen: "../../assets/movieIcon.jpg"
+      imagen: "../../assets/bookIcon.jpg"
     },
     {
       titulo: "The day when I know love",
       autor: "Honeyworks",
       link: "/r/rascal+flatts/payback_21083231.html",
-      imagen: "../../assets/movieIcon.jpg"
+      imagen: "../../assets/bookIcon.jpg"
     },
     {
       titulo: "Kokuhaku Yokou Renshuu",
       autor: "Honeyworks",
       link: "/r/rascal+flatts/payback_21083231.htmlfdsagdfgfsfgdashdfhsfdhsfdga",
-      imagen: "../../assets/movieIcon.jpg"
+      imagen: "../../assets/bookIcon.jpg"
     },
   ]
   pageActual: number = 1;
   itemsSelecionados: any[] = []
-  constructor() { }
+  constructor(private services: ServicesService) { }
   ngOnChanges(changes: SimpleChanges): void {
     if(changes.opcion.currentValue == "")
     {
@@ -286,9 +287,18 @@ export class EscogerFavoritosComponent implements OnInit, OnChanges  {
   }
 
   ngOnInit(): void {
-
+    this.getCanciones()
   }
 
+  getCanciones()
+  {
+    this.services.getCanciones().subscribe(
+      data =>
+      {
+        console.log(data)
+      }
+    )
+  }
 
   cambiarInfoMostar(opcion:number)
   {
@@ -314,27 +324,56 @@ export class EscogerFavoritosComponent implements OnInit, OnChanges  {
     if(selectedIndex != -1)
     {
       this.itemsSelecionados.splice(selectedIndex,1);
-      this.modificarImagen(element,0);
+      this.encontrarIndex(element,0);
     }
     else
     {
       this.itemsSelecionados.push(element);
-      this.modificarImagen(element,1);
+      this.encontrarIndex(element,1);
     }
 
   }
 
-  modificarImagen(elemento: string, seleccionado: number)
+  encontrarIndex(elemento: string, seleccionado: number)
   {
+    let arrayToMark: ModeloGeneral[] = []
     let index = -1;
-    for(let i=0; i<this.peliculasArray.length;i++)
+    if(this.opcion=="Peliculas" || this.opcion=="")
     {
-      if(this.peliculasArray[i].titulo == elemento)
+      arrayToMark = this.peliculasArray
+    }
+    else if(this.opcion=="Canciones")
+    {
+      arrayToMark = this.cancionesArray
+    }
+    else
+    {
+      arrayToMark = this.librosArray
+    }
+    for(let i=0; i<arrayToMark.length;i++)
+    {
+      if(arrayToMark[i].titulo == elemento)
       {
         index = i;
       }
     }
-    if(seleccionado == 0)
+    if(this.opcion=="Peliculas" || this.opcion=="")
+    {
+      this.modificarImagenPeliculas(index,seleccionado)
+    }
+    else if(this.opcion=="Canciones")
+    {
+      this.modificarImagenCanciones(index,seleccionado)
+    }else
+    {
+      this.modificarImagenLibros(index,seleccionado)
+    }
+    
+  }
+
+  modificarImagenPeliculas(index:number,seleccionado: number)
+  {
+    if(seleccionado==0)
     {
       this.peliculasArray[index].imagen = "../../assets/movieIcon.jpg";
     }
@@ -342,7 +381,32 @@ export class EscogerFavoritosComponent implements OnInit, OnChanges  {
     {
       this.peliculasArray[index].imagen = "../../assets/seleccionadoMovie.jpg"
     }
-    
+  }
+
+  
+  modificarImagenCanciones(index:number,seleccionado: number)
+  {
+    if(seleccionado==0)
+    {
+      this.cancionesArray[index].imagen = "../../assets/songIcon.jpg";
+    }
+    else
+    {
+      this.cancionesArray[index].imagen = "../../assets/seleccionadoSong.jpg"
+    }
+  }
+
+  
+  modificarImagenLibros(index:number,seleccionado: number)
+  {
+    if(seleccionado==0)
+    {
+      this.librosArray[index].imagen = "../../assets/bookIcon.jpg";
+    }
+    else
+    {
+      this.librosArray[index].imagen = "../../assets/seleccionadoBook.jpg"
+    }
   }
 
 }
