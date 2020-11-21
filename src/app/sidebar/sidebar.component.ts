@@ -1,23 +1,16 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import {MediaMatcher} from '@angular/cdk/layout';
-
-
+import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
+import {MatToolbarModule} from '@angular/material/toolbar';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
-export class SidebarComponent {
-
+export class SidebarComponent implements OnDestroy {
   mobileQuery: MediaQueryList;
 
-  //fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
-
-  fillerNav = [
-    {name:"Libros", route:"", icon:"book"},
-    {name:"Música", route:"", icon:"library_music"},
-    {name:"Películas", route:"", icon:"movie"}
-  ]
+  fillerNav = ["Peliculas", "Canciones", "Libros"]
+  opcionSeleccionada: string = "";
 
   fillerContent = Array.from({length: 50}, () =>
       `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -38,9 +31,12 @@ export class SidebarComponent {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
 
-  shouldRun = true;
+  shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some(h => h.test(window.location.host));
 
-  //ngOnInit(): void {
-  //}
-
+  cambiarOpcionRecomendados(eleccion:any)
+  {
+    this.opcionSeleccionada=eleccion;
+  }
+  
+  
 }
