@@ -1,20 +1,29 @@
-<div>
   <div class="row">
     <div class="col-md-3" *ngFor="let info of infoMostrar | paginate: {itemsPerPage:16, currentPage: pageActual}">
-      <mat-card class="example-card" (click)="seleccionarItem(info.titulo)">
-        <mat-card-header>
+      <mat-card class="example-card" (click)="seleccionarItem(info)">
+        <mat-card-header *ngIf="condicionOpcion==0">
           <!-- <div mat-card-avatar class="example-header-image"></div> -->
-          <mat-card-title>{{info.titulo}}</mat-card-title>
-          <mat-card-subtitle>{{info.autor}}</mat-card-subtitle>
+          <mat-card-title>{{info.title}}</mat-card-title>
+          <mat-card-subtitle>{{info.production_companies}}</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src="{{info.imagen}}" alt="Photo of a Shiba Inu">
+        <mat-card-header *ngIf="condicionOpcion==1">
+          <!-- <div mat-card-avatar class="example-header-image"></div> -->
+          <mat-card-title>{{info.song}}</mat-card-title>
+          <mat-card-subtitle>{{info.artist}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-header *ngIf="condicionOpcion==2">
+          <!-- <div mat-card-avatar class="example-header-image"></div> -->
+          <mat-card-title>{{info.bookTitle}}</mat-card-title>
+          <mat-card-subtitle>{{info.authors}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="{{info.image}}" alt="Photo of a Shiba Inu">
         <mat-card-content *ngIf="condicionOpcion==0">
           <div class="row">
             <div class="col-md-6">
               <h2>Resumen</h2>
             </div>
             <div class="col-md-6">
-              {{info.resumen}}
+              {{info.overview}}
             </div>
           </div>
           <div class="row">
@@ -22,7 +31,7 @@
               <h2>Género</h2>
             </div>
             <div class="col-md-6">
-              {{info.genero}}
+              {{info.genres}}
             </div>
           </div>
           <div class="row">
@@ -30,7 +39,7 @@
               <h2>Fecha Publicación</h2>
             </div>
             <div class="col-md-6">
-              {{info.fechaPublicacion}}
+              {{info.releaseDate}}
             </div>
           </div>
           <div class="row">
@@ -51,30 +60,30 @@
           <div class="row">
             {{info.link}}
           </div>
-        </mat-card-content>
-        <mat-card-content *ngIf="condicionOpcion==2">
-          <div class="row">
-            <div class="col-md-6">
-              <h2>Resumen</h2>
-            </div>
-            <div class="col-md-6">
-              {{info.resumen}}
+          <!-- <div class="row">
+            <div class="col-md-2">
+              <h2>Text</h2>
             </div>
           </div>
+          <div class="row">
+            {{info.text}}
+          </div> -->
+        </mat-card-content>
+        <mat-card-content *ngIf="condicionOpcion==2">
           <div class="row">
             <div class="col-md-6">
               <h2>Género</h2>
             </div>
             <div class="col-md-6">
-              {{info.genero}}
+              {{info.bookGenres}}
             </div>
           </div>
           <div class="row">
             <div class="col-md-6">
-              <h2>Fecha Publicación</h2>
+              <h2>Fecha de publicación</h2>
             </div>
             <div class="col-md-6">
-              {{info.fechaPublicacion}}
+              {{info.publicationDate}}
             </div>
           </div>
         </mat-card-content>
@@ -82,5 +91,4 @@
     </div>
   </div>
   
-</div>
 <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>

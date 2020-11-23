@@ -52,11 +52,14 @@ import { EscogerFavoritosComponent } from './escoger-favoritos/escoger-favoritos
 import { MatCardModule } from '@angular/material/card';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { HttpClientModule} from '@angular/common/http';
+import { RecomendacionesComponent } from './recomendaciones/recomendaciones/recomendaciones.component';
+import { ModalModule } from 'ngb-modal';
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
-    EscogerFavoritosComponent
+    EscogerFavoritosComponent,
+    RecomendacionesComponent
   ],
   imports: [
     BrowserModule,
@@ -112,7 +115,8 @@ import { HttpClientModule} from '@angular/common/http';
     PortalModule,
     ScrollingModule,
     NgxPaginationModule,
-    HttpClientModule
+    HttpClientModule,
+    ModalModule
   ],
   providers: [],
   bootstrap: [AppComponent]

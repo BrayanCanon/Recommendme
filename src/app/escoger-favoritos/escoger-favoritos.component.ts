@@ -14,254 +14,262 @@ export class EscogerFavoritosComponent implements OnInit, OnChanges  {
   peliculasArray: ModeloGeneral[] = 
   [
     {
-      titulo: "Toy Story",
-      genero:"Infantil",
-      fechaPublicacion:"2004",
-      autor: "Pixar",
+      title: "Toy Story",
+      genres:"Infantil",
+      releaseDate:"2004",
+      production_companies: "Pixar",
       duracion:"90",
-      resumen:"Toy Story Resumen",
-      imagen: "../../assets/movieIcon.jpg"
+      overview:"Toy Story Resumen",
+      image: "../../assets/movieIcon.jpg"
     },
     {
-      titulo: "Buscando a Nemo",
-      genero:"Infantil",
-      fechaPublicacion:"2003",
-      autor: "Pixar",
+      title: "Buscando a Nemo",
+      genres:"Infantil",
+      releaseDate:"2003",
+      production_companies: "Pixar",
       duracion:"90",
-      resumen:"Buscando a Nemo Resumen",
-      imagen: "../../assets/movieIcon.jpg"
+      overview:"Buscando a Nemo Resumen",
+      image: "../../assets/movieIcon.jpg"
     },
     {
-      titulo: "Monster Inc",
-      genero:"Infantil",
-      fechaPublicacion:"2004",
-      autor: "Pixar",
+      title: "Monster Inc",
+      genres:"Infantil",
+      releaseDate:"2004",
+      production_companies: "Pixar",
       duracion:"90",
-      resumen:"Monster Inc Resumen",
-      imagen: "../../assets/movieIcon.jpg"
+      overview:"Monster Inc Resumen",
+      image: "../../assets/movieIcon.jpg"
     },
     {
-      titulo: "Mulán",
-      genero:"Infantil",
-      fechaPublicacion:"2004",
-      autor: "Pixar",
+      title: "Mulán",
+      genres:"Infantil",
+      releaseDate:"2004",
+      production_companies: "Pixar",
       duracion:"90",
-      resumen:"Mulán",
-      imagen: "../../assets/movieIcon.jpg"
+      overview:"Mulán",
+      image: "../../assets/movieIcon.jpg"
     },
     {
-      titulo: "La Dama y el Vagabundo",
-      genero:"Infantil",
-      fechaPublicacion:"2004",
-      autor: "Pixar",
+      title: "La Dama y el Vagabundo",
+      genres:"Infantil",
+      releaseDate:"2004",
+      production_companies: "Pixar",
       duracion:"90",
-      resumen:"Toy Story Resumen",
-      imagen: "../../assets/movieIcon.jpg"
+      overview:"Toy Story Resumen",
+      image: "../../assets/movieIcon.jpg"
     },
     {
-      titulo: "Toy Story 2",
-      genero:"Infantil",
-      fechaPublicacion:"2004",
-      autor: "Pixar",
+      title: "Toy Story 2",
+      genres:"Infantil",
+      releaseDate:"2004",
+      production_companies: "Pixar",
       duracion:"90",
-      resumen:"Toy Story Resumen",
-      imagen: "../../assets/movieIcon.jpg"
+      overview:"Toy Story Resumen",
+      image: "../../assets/movieIcon.jpg"
     },
     {
-      titulo: "Buscando a Nemo 2",
-      genero:"Infantil",
-      fechaPublicacion:"2003",
-      autor: "Pixar",
+      title: "Buscando a Nemo 2",
+      genres:"Infantil",
+      releaseDate:"2003",
+      production_companies: "Pixar",
       duracion:"90",
-      resumen:"Buscando a Nemo Resumen",
-      imagen: "../../assets/movieIcon.jpg"
+      overview:"Buscando a Nemo Resumen",
+      image: "../../assets/movieIcon.jpg"
     },
     {
-      titulo: "Monster Inc 2",
-      genero:"Infantil",
-      fechaPublicacion:"2004",
-      autor: "Pixar",
+      title: "Monster Inc 2",
+      genres:"Infantil",
+      releaseDate:"2004",
+      production_companies: "Pixar",
       duracion:"90",
-      resumen:"Monster Inc Resumen",
-      imagen: "../../assets/movieIcon.jpg"
+      overview:"Monster Inc Resumen",
+      image: "../../assets/movieIcon.jpg"
     },
     {
-      titulo: "Mulán 2",
-      genero:"Infantil",
-      fechaPublicacion:"2004",
-      autor: "Pixar",
+      title: "Mulán 2",
+      genres:"Infantil",
+      releaseDate:"2004",
+      production_companies: "Pixar",
       duracion:"90",
-      resumen:"Mulán",
-      imagen: "../../assets/movieIcon.jpg"
+      overview:"Mulán",
+      image: "../../assets/movieIcon.jpg"
     },
     {
-      titulo: "La Dama y el Vagabundo 2",
-      genero:"Infantil",
-      fechaPublicacion:"2004",
-      autor: "Pixar",
+      title: "La Dama y el Vagabundo 2",
+      genres:"Infantil",
+      releaseDate:"2004",
+      production_companies: "Pixar",
       duracion:"90",
-      resumen:"Toy Story Resumen",
-      imagen: "../../assets/movieIcon.jpg"
+      overview:"Toy Story Resumen",
+      image: "../../assets/movieIcon.jpg"
     },
     {
-      titulo: "Toy Story 3",
-      genero:"Infantil",
-      fechaPublicacion:"2004",
-      autor: "Pixar",
+      title: "Toy Story 3",
+      genres:"Infantil",
+      releaseDate:"2004",
+      production_companies: "Pixar",
       duracion:"90",
-      resumen:"Toy Story Resumen",
-      imagen: "../../assets/movieIcon.jpg"
+      overview:"Toy Story Resumen",
+      image: "../../assets/movieIcon.jpg"
     },
     {
-      titulo: "Buscando a Nemo 3",
-      genero:"Infantil",
-      fechaPublicacion:"2003",
-      autor: "Pixar",
+      title: "Buscando a Nemo 3",
+      genres:"Infantil",
+      releaseDate:"2003",
+      production_companies: "Pixar",
       duracion:"90",
-      resumen:"Buscando a Nemo Resumen",
-      imagen: "../../assets/movieIcon.jpg"
+      overview:"Buscando a Nemo Resumen",
+      image: "../../assets/movieIcon.jpg"
     },
     {
-      titulo: "Monster Inc 3",
-      genero:"Infantil",
-      fechaPublicacion:"2004",
-      autor: "Pixar",
+      title: "Monster Inc 3",
+      genres:"Infantil",
+      releaseDate:"2004",
+      production_companies: "Pixar",
       duracion:"90",
-      resumen:"Monster Inc Resumen",
-      imagen: "../../assets/movieIcon.jpg"
+      overview:"Monster Inc Resumen",
+      image: "../../assets/movieIcon.jpg"
     },
     {
-      titulo: "Mulán 3",
-      genero:"Infantil",
-      fechaPublicacion:"2004",
-      autor: "Pixar",
+      title: "Mulán 3",
+      genres:"Infantil",
+      releaseDate:"2004",
+      production_companies: "Pixar",
       duracion:"90",
-      resumen:"Mulán",
-      imagen: "../../assets/movieIcon.jpg"
+      overview:"Mulán",
+      image: "../../assets/movieIcon.jpg"
     },
     {
-      titulo: "La Dama y el Vagabundo",
-      genero:"Infantil",
-      fechaPublicacion:"2004",
-      autor: "Pixar",
+      title: "La Dama y el Vagabundo 3",
+      genres:"Infantil",
+      releaseDate:"2004",
+      production_companies: "Pixar",
       duracion:"90",
-      resumen:"Toy Story Resumen",
-      imagen: "../../assets/movieIcon.jpg"
+      overview:"Toy Story Resumen",
+      image: "../../assets/movieIcon.jpg"
     },
     {
-      titulo: "Toy Story4",
-      genero:"Infantil",
-      fechaPublicacion:"2004",
-      autor: "Pixar",
+      title: "Toy Story 4",
+      genres:"Infantil",
+      releaseDate:"2004",
+      production_companies: "Pixar",
       duracion:"90",
-      resumen:"Toy Story Resumen",
-      imagen: "../../assets/movieIcon.jpg"
+      overview:"Toy Story Resumen",
+      image: "../../assets/movieIcon.jpg"
     },
     {
-      titulo: "Buscando a Nemo 4",
-      genero:"Infantil",
-      fechaPublicacion:"2003",
-      autor: "Pixar",
+      title: "Buscando a Nemo 4",
+      genres:"Infantil",
+      releaseDate:"2003",
+      production_companies: "Pixar",
       duracion:"90",
-      resumen:"Buscando a Nemo Resumen",
-      imagen: "../../assets/movieIcon.jpg"
+      overview:"Buscando a Nemo Resumen",
+      image: "../../assets/movieIcon.jpg"
     },
     {
-      titulo: "Monster Inc 4",
-      genero:"Infantil",
-      fechaPublicacion:"2004",
-      autor: "Pixar",
+      title: "Monster Inc 4",
+      genres:"Infantil",
+      releaseDate:"2004",
+      production_companies: "Pixar",
       duracion:"90",
-      resumen:"Monster Inc Resumen",
-      imagen: "../../assets/movieIcon.jpg"
+      overview:"Monster Inc Resumen",
+      image: "../../assets/movieIcon.jpg"
     },
     {
-      titulo: "Mulán 4",
-      genero:"Infantil",
-      fechaPublicacion:"2004",
-      autor: "Pixar",
+      title: "Mulán 4",
+      genres:"Infantil",
+      releaseDate:"2004",
+      production_companies: "Pixar",
       duracion:"90",
-      resumen:"Mulán",
-      imagen: "../../assets/movieIcon.jpg"
+      overview:"Mulán",
+      image: "../../assets/movieIcon.jpg"
     },
     {
-      titulo: "La Dama y el Vagabundo 4",
-      genero:"Infantil",
-      fechaPublicacion:"2004",
-      autor: "Pixar",
+      title: "La Dama y el Vagabundo 4",
+      genres:"Infantil",
+      releaseDate:"2004",
+      production_companies: "Pixar",
       duracion:"90",
-      resumen:"Toy Story Resumen",
-      imagen: "../../assets/movieIcon.jpg"
+      overview:"Toy Story Resumen",
+      image: "../../assets/movieIcon.jpg"
     },
   ]
 
   cancionesArray: ModeloGeneral[] = 
   [
     {
-      titulo: "Yakimoshi no kotae",
-      autor: "Honeyworks",
+      song: "Yakimoshi no kotae",
+      artist: "Honeyworks",
       link: "/r/rascal+flatts/payback_21083231.html",
-      imagen: "../../assets/songIcon.jpg"
+      image: "../../assets/songIcon.jpg"
     },
     {
-      titulo: "Ima suki ni naru",
-      autor: "Honeyworks",
+      song: "Ima suki ni naru",
+      artist: "Honeyworks",
       link: "/r/rascal+flatts/payback_21083231.html",
-      imagen: "../../assets/songIcon.jpg"
+      image: "../../assets/songIcon.jpg"
     },
     {
-      titulo: "Tokyo Summer Session",
-      autor: "Honeyworks",
+      song: "Tokyo Summer Session",
+      artist: "Honeyworks",
       link: "/r/rascal+flatts/payback_21083231.html",
-      imagen: "../../assets/songIcon.jpg"
+      image: "../../assets/songIcon.jpg"
     },
     {
-      titulo: "The day when I know love",
-      autor: "Honeyworks",
+      song: "The day when I know love",
+      artist: "Honeyworks",
       link: "/r/rascal+flatts/payback_21083231.html",
-      imagen: "../../assets/songIcon.jpg"
+      image: "../../assets/songIcon.jpg"
     },
     {
-      titulo: "Kokuhaku Yokou Renshuu",
-      autor: "Honeyworks",
+      song: "Kokuhaku Yokou Renshuu",
+      artist: "Honeyworks",
       link: "/r/rascal+flatts/payback_21083231.htmlfdsagdfgfsfgdashdfhsfdhsfdga",
-      imagen: "../../assets/songIcon.jpg"
+      image: "../../assets/songIcon.jpg"
     },
   ]
 
   librosArray: ModeloGeneral[] = 
   [
     {
-      titulo: "Yakimoshi no kotae",
-      autor: "Honeyworks",
-      fechaPublicacion: "2003",
-      genero: "sdsad",
+      bookTitle: "Yakimoshi no kotae",
+      authors: "Honeyworks",
+      publicationDate: "2003",
+      bookGenres: "sdsad",
       link: "/r/rascal+flatts/payback_21083231.html",
-      imagen: "../../assets/bookIcon.jpg"
+      image: "../../assets/bookIcon.jpg"
     },
     {
-      titulo: "Ima suki ni naru",
-      autor: "Honeyworks",
+      bookTitle: "Ima suki ni naru",
+      authors: "Honeyworks",
+      publicationDate: "2003",
+      bookGenres: "sdsad",
       link: "/r/rascal+flatts/payback_21083231.html",
-      imagen: "../../assets/bookIcon.jpg"
+      image: "../../assets/bookIcon.jpg"
     },
     {
-      titulo: "Tokyo Summer Session",
-      autor: "Honeyworks",
+      bookTitle: "Tokyo Summer Session",
+      authors: "Honeyworks",
+      publicationDate: "2003",
+      bookGenres: "sdsad",
       link: "/r/rascal+flatts/payback_21083231.html",
-      imagen: "../../assets/bookIcon.jpg"
+      image: "../../assets/bookIcon.jpg"
     },
     {
-      titulo: "The day when I know love",
-      autor: "Honeyworks",
+      bookTitle: "The day when I know love",
+      authors: "Honeyworks",
+      publicationDate: "2003",
+      bookGenres: "sdsad",
       link: "/r/rascal+flatts/payback_21083231.html",
-      imagen: "../../assets/bookIcon.jpg"
+      image: "../../assets/bookIcon.jpg"
     },
     {
-      titulo: "Kokuhaku Yokou Renshuu",
-      autor: "Honeyworks",
-      link: "/r/rascal+flatts/payback_21083231.htmlfdsagdfgfsfgdashdfhsfdhsfdga",
-      imagen: "../../assets/bookIcon.jpg"
+      bookTitle: "Kokuhaku Yokou Renshuu",
+      authors: "Honeyworks",
+      publicationDate: "2003",
+      bookGenres: "sdsad",
+      link: "/r/rascal+flatts/payback_21083231.html",
+      image: "../../assets/bookIcon.jpg"
     },
   ]
   pageActual: number = 1;
@@ -295,7 +303,7 @@ export class EscogerFavoritosComponent implements OnInit, OnChanges  {
     this.services.getCanciones().subscribe(
       data =>
       {
-        console.log(data)
+        console.log(data[0])
       }
     )
   }
@@ -318,8 +326,21 @@ export class EscogerFavoritosComponent implements OnInit, OnChanges  {
     }
   }
 
-  seleccionarItem(element: any)
+  seleccionarItem(info: ModeloGeneral)
   {
+    let element:any  = "";
+    if(this.opcion=="Peliculas" || this.opcion=="")
+    {
+      element = info.title
+    }
+    else if(this.opcion=="Canciones")
+    {
+      element = info.song
+    }
+    else
+    {
+      element = info.bookTitle
+    }
     let selectedIndex = this.itemsSelecionados.indexOf(element);
     if(selectedIndex != -1)
     {
@@ -341,22 +362,37 @@ export class EscogerFavoritosComponent implements OnInit, OnChanges  {
     if(this.opcion=="Peliculas" || this.opcion=="")
     {
       arrayToMark = this.peliculasArray
+      for(let i=0; i<arrayToMark.length;i++)
+      {
+        if(arrayToMark[i].title == elemento)
+        {
+          index = i;
+        }
+      }
     }
     else if(this.opcion=="Canciones")
     {
       arrayToMark = this.cancionesArray
+      for(let i=0; i<arrayToMark.length;i++)
+      {
+        if(arrayToMark[i].song == elemento)
+        {
+          index = i;
+        }
+      }
     }
     else
     {
       arrayToMark = this.librosArray
-    }
-    for(let i=0; i<arrayToMark.length;i++)
-    {
-      if(arrayToMark[i].titulo == elemento)
+      for(let i=0; i<arrayToMark.length;i++)
       {
-        index = i;
+        if(arrayToMark[i].bookTitle == elemento)
+        {
+          index = i;
+        }
       }
     }
+
     if(this.opcion=="Peliculas" || this.opcion=="")
     {
       this.modificarImagenPeliculas(index,seleccionado)
@@ -375,11 +411,11 @@ export class EscogerFavoritosComponent implements OnInit, OnChanges  {
   {
     if(seleccionado==0)
     {
-      this.peliculasArray[index].imagen = "../../assets/movieIcon.jpg";
+      this.peliculasArray[index].image = "../../assets/movieIcon.jpg";
     }
     else
     {
-      this.peliculasArray[index].imagen = "../../assets/seleccionadoMovie.jpg"
+      this.peliculasArray[index].image = "../../assets/seleccionadoMovie.jpg"
     }
   }
 
@@ -388,11 +424,11 @@ export class EscogerFavoritosComponent implements OnInit, OnChanges  {
   {
     if(seleccionado==0)
     {
-      this.cancionesArray[index].imagen = "../../assets/songIcon.jpg";
+      this.cancionesArray[index].image = "../../assets/songIcon.jpg";
     }
     else
     {
-      this.cancionesArray[index].imagen = "../../assets/seleccionadoSong.jpg"
+      this.cancionesArray[index].image = "../../assets/seleccionadoSong.jpg"
     }
   }
 
@@ -401,11 +437,11 @@ export class EscogerFavoritosComponent implements OnInit, OnChanges  {
   {
     if(seleccionado==0)
     {
-      this.librosArray[index].imagen = "../../assets/bookIcon.jpg";
+      this.librosArray[index].image = "../../assets/bookIcon.jpg";
     }
     else
     {
-      this.librosArray[index].imagen = "../../assets/seleccionadoBook.jpg"
+      this.librosArray[index].image = "../../assets/seleccionadoBook.jpg"
     }
   }
 
