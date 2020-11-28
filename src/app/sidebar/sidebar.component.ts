@@ -1,6 +1,7 @@
 import {MediaMatcher} from '@angular/cdk/layout';
 import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { ModeloGeneral } from '../escoger-favoritos/models/modeloGeneral.module';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -8,6 +9,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 })
 export class SidebarComponent implements OnDestroy {
   mobileQuery: MediaQueryList;
+  listaResultado: ModeloGeneral[] = []
+  generarResultado: boolean = false;
 
   fillerNav = ["Peliculas", "Canciones", "Libros"]
   opcionSeleccionada: string = "";
@@ -38,5 +41,13 @@ export class SidebarComponent implements OnDestroy {
     this.opcionSeleccionada=eleccion;
   }
   
+  getListaResultado(listaResultado:any)
+  {
+    this.listaResultado = listaResultado
+  }
   
+  darRespuesta(event:any)
+  {
+    this.generarResultado = event;
+  }
 }

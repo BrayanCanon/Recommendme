@@ -1,7 +1,12 @@
 <mat-toolbar color="primary" class="example-toolbar">
   <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
   <h1 class="example-app-name">Recommend Me!</h1>
-  <app-recomendaciones></app-recomendaciones>
+  
+  <button type="button" class="btn btn-success btnrespuesta" (click)="darRespuesta($event)">
+    Terminar
+  </button>
+
+  <!-- <app-recomendaciones  [resultado]="listaResultado" (solicitarResultado)="darRespuesta($event)"></app-recomendaciones> -->
 </mat-toolbar>
 
 <mat-sidenav-container class="example-sidenav-container"
@@ -14,6 +19,6 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <app-escoger-favoritos [opcion]="opcionSeleccionada"></app-escoger-favoritos>
+    <app-escoger-favoritos [opcion]="opcionSeleccionada" (resultadoFiltrado)="getListaResultado($event)" [solicitarResultado]="generarResultado"></app-escoger-favoritos>
   </mat-sidenav-content>
 </mat-sidenav-container>

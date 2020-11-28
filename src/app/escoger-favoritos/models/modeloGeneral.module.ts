@@ -3,7 +3,7 @@ export class ModeloGeneral
     // Propiedades peliculas
     title?: string = ""
     genres?: string = ""
-    releaseDate?: string = ""
+    release_date?: string = ""
     production_companies?: string = ""
     
     duracion?: string = ""
@@ -17,7 +17,7 @@ export class ModeloGeneral
     link?: string =""
 
     // Propiedades libros
-    bookTitle?: string = ""
+    book?: string = ""
     authors?: string = ""
     publicationDate?: string = ""
     bookGenres?: string =""

@@ -1,5 +1,7 @@
-  <div class="row">
-    <div class="col-md-3" *ngFor="let info of infoMostrar | paginate: {itemsPerPage:16, currentPage: pageActual}">
+<ngx-spinner bdColor = "rgba(25,0,46,0.8)" size = "large" color = "#fff" type = "pacman" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+
+<div class="row">
+    <div class="col-md-3" *ngFor="let info of infoMostrar | paginate: {itemsPerPage:8, currentPage: pageActual}">
       <mat-card class="example-card" (click)="seleccionarItem(info)">
         <mat-card-header *ngIf="condicionOpcion==0">
           <!-- <div mat-card-avatar class="example-header-image"></div> -->
@@ -13,10 +15,10 @@
         </mat-card-header>
         <mat-card-header *ngIf="condicionOpcion==2">
           <!-- <div mat-card-avatar class="example-header-image"></div> -->
-          <mat-card-title>{{info.bookTitle}}</mat-card-title>
-          <mat-card-subtitle>{{info.authors}}</mat-card-subtitle>
+          <mat-card-title>{{info.book_title}}</mat-card-title>
+          <!-- <mat-card-subtitle>{{info.authors}}</mat-card-subtitle> -->
         </mat-card-header>
-        <img mat-card-image src="{{info.image}}" alt="Photo of a Shiba Inu">
+        <img mat-card-image src="{{info.image}}" alt="{{info.title}}">
         <mat-card-content *ngIf="condicionOpcion==0">
           <div class="row">
             <div class="col-md-6">
@@ -39,15 +41,7 @@
               <h2>Fecha Publicación</h2>
             </div>
             <div class="col-md-6">
-              {{info.releaseDate}}
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <h2>Duración</h2>
-            </div>
-            <div class="col-md-6">
-              {{info.duracion}}
+              {{info.release_date}}
             </div>
           </div>
         </mat-card-content>
@@ -69,7 +63,7 @@
             {{info.text}}
           </div> -->
         </mat-card-content>
-        <mat-card-content *ngIf="condicionOpcion==2">
+        <!-- <mat-card-content *ngIf="condicionOpcion==2">
           <div class="row">
             <div class="col-md-6">
               <h2>Género</h2>
@@ -86,9 +80,25 @@
               {{info.publicationDate}}
             </div>
           </div>
-        </mat-card-content>
+        </mat-card-content> -->
       </mat-card>
     </div>
   </div>
-  
+ 
 <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
+
+
+<div class="row">
+  <div class="col-md-3">
+    <h1>Ingrese el id del usuario:</h1>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">ID</span>
+      </div>
+      <input type="text" class="form-control"  aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="userId">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" (click)="mostrarRecomendaciones($event)">Recomendaciones</button>
+      </div>
+    </div>
+  </div>
+</div>

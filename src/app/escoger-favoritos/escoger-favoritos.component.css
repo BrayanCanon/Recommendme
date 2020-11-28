@@ -1,0 +1,12 @@
+.btnrespuesta
+{
+    position: absolute; 
+    top: 0px;
+    font-size: larger;
+    font-weight: 500;
+}
+
+.modal-content
+{
+    color: black;
+}
